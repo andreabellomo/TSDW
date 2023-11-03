@@ -17,7 +17,7 @@ public class Server_prova1 {
 
     }
 
-    private static int PORT = 3333;
+    public static int PORT = 3333;
     
 
     public static void main (String args[]){
