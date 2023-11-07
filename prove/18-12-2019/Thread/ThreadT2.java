@@ -14,13 +14,13 @@ public class ThreadT2 extends Thread {
                 sleep(300);
             }catch(InterruptedException e ){}
 
-            synchronized (shared){
-                shared.notifyAll();
+            
+                shared.notifYShared();
                 int x = shared.getShared();
 
-                if(x == -1) break;
+                if(x == -1) return;
                 else continue;
-            }
+            
             
         }
 

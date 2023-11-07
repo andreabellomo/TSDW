@@ -15,5 +15,13 @@ public class Shared{
     public synchronized void setShared(int value){
         x = value;
     }
-    
+
+    public synchronized void waitShared() throws InterruptedException{
+        wait();
+    }
+
+    public synchronized void notifYShared() {
+        notifyAll();
+    }
+
 }
