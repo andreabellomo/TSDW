@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h2>Lista degli uffici</h2>
+        <div th:each="ufficio:${uffici}">
+            </a>ID : <a th:href="@{/ufficio/about/{id}(id = ${ufficio.id} )}" > <span th:text = "${ufficio.id}"></span></a>
+            Nome : <span th:text =" ${ufficio.nome}"></span>
+            Settore : <span th:text =" ${ufficio.settore}"></span>          
+        </div>
+
+        <form th:action ="@{/ufficio}" method = "post">
+           Nome : <input type = "text" required name = "nome"> <br>
+           Settore : <input type = "text" required name = "settore"> <br>
+           <button>Inserisci nuovo ufficio</button>
+        </form>
+
+    </body>
+</html>

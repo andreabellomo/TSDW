@@ -1,0 +1,24 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <h2> Modifica cantante</h2>
+
+        <form th:action = "@{/singer/update/{id}(id = ${singer.id})}" method = "post" th:object="${singer}">
+            Nome : <input type ="text" name = "nome" required th:field="*{nome}"><br>
+            Genere : <input type ="text" name = "genere" required th:field="*{genere}"><br>
+            <input type ="hidden" name = "id" required th:field="*{id}">
+            <button> Modifica cantante</button>
+        </form>
+
+        <form th:action = "@{/singer/delete/{id}(id = ${singer.id})}" method = "get" >
+            <button> Elimina cantante</button>
+        </form>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <h2>Lista degli dipendenti</h2>
+        <div th:each="dipendente:${dipendenti}">
+            ID : <span th:text = "${dipendente.id}"></span>
+            Nome : <span th:text ="${dipendente.nome}"></span>
+            Ruolo : <span th:text ="${dipendente.ruolo}"></span> 
+            Ufficio_id : <span th:text ="${dipendente.ufficio.id}"></span>
+
+        </div>
+
+        <form th:action ="@{/dipendente}" method = "post">
+           Nome : <input type = "text" required name = "nome"> <br>
+           Ruolo : <input type = "text" required name = "ruolo"> <br>
+           Ufficio_id : <input type = "text"  required name = "ufficio.id"> <br>
+           <button>Inserisci nuovo dipendente</button>
+        </form>
+        
+    </body>
+</html>

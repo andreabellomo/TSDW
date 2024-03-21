@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2> Modifica prodotto </h2>
+
+        <form th:action ="@{/prodotto/update/{id}(id = ${prodotto.id})}" th:object="${prodotto}" method="post">
+            Nome: <input type = "text" name = "nome" th:field="*{nome}" required/>
+            Giacenza: <input type = "text" name = "giacenza" th:field="*{giacenza}" required/>
+            Categoria: <input type = "text" name = "categoria_id" th:field="*{categoria.id}" required/>
+            <input type = "hidden" name = "id" th:field="*{id}"/>
+            <button>Modifica prodotto</button>
+        </form>
+
+        <form th:action ="@{/prodotto/delete/{id}(id = ${prodotto.id})}" method="post"> 
+            <button>Elimina prodotto</button>
+        </form>
+
+
+    </body>
+</html>

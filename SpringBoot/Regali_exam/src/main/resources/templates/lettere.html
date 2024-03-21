@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Lista delle lettere da consegnare</h2>
+        
+        <div th:each="lettera : ${lettere}">
+            <a th:href = "@{lettera/about/{id}(id = ${lettera.id})}" > Nome : <span th:text = "${lettera.nome}"> </span></a> 
+            Quantità : <span th:text = "${lettera.quantita}"> </span>
+            Consegnata : <span th:text = "${lettera.consegnata}"> </span>
+            <br>
+
+            <form th:action="@{/lettera/delete/{id}(id = ${lettera.id})}" method ="post">
+                <button type = "sumbit"> Delete </button>
+            </form>
+        </div>
+
+        <form th:action="@{/lettera}" method ="post">
+            Nome <input type = "text" name = "nome"><br>
+            Quantità <input type = "text" name = "quantita"><br>
+            Consegnata <input type = "text" name = "consegnata"><br>
+            <button type = "submit"> Inserisci </button>
+        </form>
+
+        <form th:action="@{/lettera/befana}" method ="get">
+            <button type = "sumbit"> Bonus </button>
+        </form>
+
+    </body>
+</html>

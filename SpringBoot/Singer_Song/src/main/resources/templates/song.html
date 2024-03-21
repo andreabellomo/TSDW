@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <h2> Modifica canzone</h2>
+
+        <form th:action = "@{/song/update/{id}(id = ${song.id})}" method = "post" th:object ="${song}">
+            titolo : <input type ="text" name = "titolo" required th:field="*{titolo}"><br>
+            durata : <input type ="text" name = "durata" required th:field="*{durata}"><br>
+            Singer_id : <select name = "singer.id" th:field="*{singer.id}">
+                <option th:each="singer:${singers}" th:text="${singer.nome}" th:value="${singer.id}">Sinfer Name</option>
+            </select>
+            <button> Modifica canzone</button>
+        </form>
+
+        <form th:action = "@{/song/delete/{id}(id = ${song.id})}" method = "get" >
+            <button> Elimina canzone</button>
+        </form>
+
+       
+
+    </body>
+</html>

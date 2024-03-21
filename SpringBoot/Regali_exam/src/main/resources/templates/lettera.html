@@ -1,0 +1,18 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Modifica lettera</h2>
+        
+        <form method="post" th:object="${lettera}" th:action="@{/lettera/update}">
+            <input type="hidden"  th:field="*{id}"/><br>
+            Nome <input type = "text" th:field ="*{nome}"><br>
+            Quantità <input type = "text" th:field ="*{quantita}"><br>
+            Consegnata <input type = "text" th:field ="*{consegnata}"><br>
+            <button type = "submit"> Modifica lettera </button>
+
+        </form>
+
+    </body>
+</html>

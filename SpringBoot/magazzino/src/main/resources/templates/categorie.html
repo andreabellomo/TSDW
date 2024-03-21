@@ -1,0 +1,20 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2> Lista delle categorie </h2>
+
+        <div th:each="categoria:${categorie}">
+            Nome <a th:href="@{/categoria/about/{id}(id = ${categoria.id} )}"> <span th:text ="${categoria.nome}"></a></span>
+            ID [<span th:text = "${categoria.id}"></span>]
+
+        </div>
+
+        <h2> Inserisci nuova categoria</h2>
+        <form th:action ="@{/categoria}" method="post">
+            Nome: <input type = "text" name = "nome" required/>
+            <button>Inserisci Categoria</button>
+        </form>
+    </body>
+</html>

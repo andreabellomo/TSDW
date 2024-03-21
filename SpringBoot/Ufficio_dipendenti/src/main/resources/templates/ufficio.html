@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <h2>Modifica ufficio</h2>
+        
+        <form th:action ="@{/ufficio/update/{id}(id = ${ufficio.id})}" method = "post" th:object = "${ufficio}">
+            <input type = "hidden" required th:field = "*{id}">
+            <input type = "hidden" th:field="*{dipendenti}" />
+           Nome : <input type = "text" required th:field = "*{nome}"> <br>
+           Settore : <input type = "text" required th:field = "*{settore}"> <br>
+           <button>Modifica ufficio</button>
+        </form>
+
+        <form th:action ="@{/ufficio/delete/{id}(id = ${ufficio.id})}" method = "get" >
+           <button>Elimina ufficio</button>
+        </form>
+
+
+
+    </body>
+</html>

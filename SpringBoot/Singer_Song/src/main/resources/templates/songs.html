@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <h2> Lista delle canzonni </h2>
+        Numero di canzone totali <span th:text = "${#lists.size(songs)}"></span>
+
+
+        <div th:each="song:${songs}">
+
+            ID [<a th:href="@{/song/about/{id}(id = ${song.id})}"><span th:text="${song.id}"></a>]</span>
+            titolo : <span th:text="${song.titolo}"></span>
+            durata : <span th:text="${song.durata}"></span>
+            Singer : <span th:text="${song.singer.id != null} ? ${song.singer.nome} : 'nessun cantante'"></span>
+            
+
+        </div>
+
+            <br><br>
+        <form th:action = "@{/song}" method = "post">
+            titolo : <input type ="text" name = "titolo" required><br>
+            durata : <input type ="text" name = "durata" required><br>
+            Singer_id : <select type = "text" name = "singer.id">
+                <option th:each="singer:${singers}" th:value="${singer.id}" th:text="${singer.nome}" >Sinfer Name</option>
+            </select> 
+            <button> Inserisci canzone</button>
+        </form>
+
+
+
+    </body>
+</html>

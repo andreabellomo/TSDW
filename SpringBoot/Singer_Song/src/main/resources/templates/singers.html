@@ -1,0 +1,27 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <h2> Lista dei cantanti</h2>
+
+        <div th:each="singer:${singers}">
+
+            ID [<a th:href="@{/singer/about/{id}(id = ${singer.id})}"><span th:text="${singer.id}"></a>]</span>
+            Nome : <span th:text="${singer.nome}"></span>
+            Genere : <span th:text="${singer.genere}"></span>
+
+        </div>
+
+        <form th:action = "@{/singer}" method = "post">
+            Nome : <input type ="text" name = "nome" required><br>
+            Genere : <input type ="text" name = "genere" required><br>
+            <button> Inserisci cantante</button>
+        </form>
+
+
+
+    </body>
+</html>

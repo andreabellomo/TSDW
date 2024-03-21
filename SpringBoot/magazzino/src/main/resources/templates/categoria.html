@@ -1,0 +1,20 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2> Modifica categoria </h2>
+
+        <form th:action ="@{/categoria/update/{id}(id = ${categoria.id})}" th:object="${categoria}" method="post">
+            Nome: <input type = "text" name = "nome" th:field="*{nome}" required/>
+            <input type = "hidden" name = "id" th:field="*{id}"/>
+            <button>Modifica Categoria</button>
+        </form>
+
+        <form th:action ="@{/categoria/delete/{id}(id = ${categoria.id})}" method="post"> 
+            <button>Elimina Categoria</button>
+        </form>
+
+
+    </body>
+</html>

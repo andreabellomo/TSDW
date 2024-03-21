@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2> Lista dei prodotti </h2>
+
+        <div th:each="prodotto:${prodotti}">
+            ID [<span th:text = "${prodotto.id}"></span>]
+            Nome <a th:href="@{/prodotto/about/{id}(id = ${prodotto.id} )}"> <span th:text ="${prodotto.nome}"></a></span>
+            Giancenza <span th:text ="${prodotto.giacenza}"></span>
+            Categoria <span th:text ="${prodotto.categoria.id}"></span>
+        
+        </div>
+
+        <h2> Inserisci nuovo prodotto</h2>
+        <form th:action ="@{/prodotto}" method="post">
+            Nome: <input type = "text" name = "nome" required/>
+            Giacenza: <input type = "text" name = "giacenza" required/>
+            Categoria: <input type = "text" name = "categoria.id" required/>
+            <button>Inserisci prodotto</button>
+        </form>
+
+        <h2> trova prodotti con giacenza > 5</h2>
+        <form th:action ="@{/prodotto/giacenza}" method="get">
+            <button>Trova prodotti gaicenza >5</button>
+        </form>
+
+
+    </body>
+</html>
